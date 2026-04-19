@@ -1,21 +1,106 @@
-Level 3 Submission —Khushi Garg
-GitHub Repo
+## Level 3 Submission — Khushi Garg
+
+## GitHub Repository
+
 https://github.com/g-khushi/lpi-level3-agent
 
-✅ Requirements Completed
-✔ Accepts user input
-✔ Uses 2 LPI tools
-✔ Processes results
-✔ Provides explainable AI
+## Overview
 
-🧠 Tools Used
-Tool 1 → Documentation retrieval
-Tool 2 → Example generation
-⚙️ Tech Stack
-Python
-🧠 Explainability
-The agent clearly shows:
+I built an LPI Agent (SMILE Advisor) that connects to the LPI sandbox and uses multiple tools along with a local LLM (Ollama) to generate structured and explainable answers.
 
-Which tools were used
-What each tool returned
-How final answer was generated
+## What I Did
+
+* Connected the agent to the LPI MCP server
+* Used multiple LPI tools to gather structured data
+* Combined tool outputs and passed them to a local LLM (Ollama)
+* Generated final answers using tool-based context
+* Ensured the output includes explainability and provenance
+
+## Tools Used
+
+* **smile_overview** → Provides SMILE methodology overview
+* **query_knowledge** → Provides domain-specific knowledge
+* **get_case_studies** → Provides real-world examples
+
+## Example
+
+**Input:**
+What are digital twins in healthcare?
+
+**Process:**
+
+1. Agent calls `smile_overview` for methodology
+2. Calls `query_knowledge` for domain insights
+3. Calls `get_case_studies` for real-world validation
+4. Sends combined data to Ollama
+
+**Output:**
+
+* SMILE overview
+* Knowledge insights
+* Case studies
+* Final structured answer
+
+
+## Explainability
+
+The agent provides explainable outputs by clearly showing how each tool contributes to the final answer.
+
+* `smile_overview` → Gives the base methodology
+* `query_knowledge` → Adds supporting technical knowledge
+* `get_case_studies` → Validates with real-world examples
+
+The agent first gathers structured data from these tools and then sends it to the LLM.
+The LLM does not generate answers randomly — it formats and explains the tool-based information.
+
+### Evidence from Output
+
+The agent output includes a **Sources / Provenance section**:
+
+* Tool 1: smile_overview → Methodology explanation
+* Tool 2: query_knowledge → Supporting knowledge
+* Tool 3: get_case_studies → Real-world validation
+
+This ensures transparency and traceability of the answer.
+
+
+## Example Explainable Output
+
+The agent produces answers along with clear sources:
+
+Sources:
+
+* Tool 1 (smile_overview) → Methodology
+* Tool 2 (query_knowledge) → Concepts
+* Tool 3 (get_case_studies) → Examples
+
+This proves that the response is grounded in actual tool outputs, not just LLM generation.
+
+
+## How to Run
+
+```bash
+npm run build
+python agent.py "your query"
+```
+
+
+## Tech Stack
+
+* Python
+* Node.js (LPI MCP Server)
+* Ollama (Local LLM)
+
+## Requirements Completed
+
+* [x] Accepts user input
+* [x] Uses multiple LPI tools
+* [x] Processes tool results
+* [x] Generates structured answers
+* [x] Provides explainability with sources
+
+## Checklist
+
+* [x] I read the README and CONTRIBUTING guide
+* [x] My PR title follows the format: `level-3: Khushi Garg`
+* [x] I tested my changes locally before submitting
